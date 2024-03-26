@@ -52,9 +52,7 @@ public class Game {
 	}
 	
 	private void runMenuMove() {
-		int heroNextPosition = hero.getPosition() + 1;
-
-		if (!map.doesUnitExist(heroNextPosition)) {
+		if (!map.doesUnitExist(hero.getPosition() + 1)) {
 			map.moveUnitPosition(hero);
 			return;
 		}
@@ -65,6 +63,43 @@ public class Game {
 		}
 		
 		runHeroBattle();
+	}
+	
+	private void runHeroBattle() {
+		while (true) {
+			System.out.printf("%s 발견\n", map.getNameOfUnit(hero.getPosition() + 1));
+			System.out.print("1) 공격 2) 물약 사용: ");
+
+			int menu = sc.nextInt();
+			
+			switch (menu) {
+				case MENU_HERO_ATTACK:
+					hero.attack(boss);
+					break;
+				case MENU_HERO_USE_POTION:
+					hero.healByPotion();
+					break;
+				default:
+					System.out.println("잘못된 메뉴입니다");
+					return;
+			}
+			
+			if (hero.isDead()) {
+				System.out.println("사망");
+				quit();
+				return;
+			}
+			
+			if (zombie.isDead()) {
+				System.out.println("좀비 사망");
+				break;
+			}
+
+			if (boss.isDead()) {
+				System.out.println("보스 사망");
+				break;
+			}
+		}
 	}
 	
 	private void quit() {

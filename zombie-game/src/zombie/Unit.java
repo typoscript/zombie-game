@@ -31,4 +31,13 @@ abstract public class Unit {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}	
+	
+	public void move() {
+		final int MAX_POSITION = 10;
+
+		if (position <= MAX_POSITION)
+			position++;
+		
+		System.out.println("오른쪽으로 이동. 현재 위치: " + position);
+	}
 }

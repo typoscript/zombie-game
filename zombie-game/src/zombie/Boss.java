@@ -27,11 +27,6 @@ public class Boss extends Zombie {
 	
 	@Override
 	public void damageHp(int damage) {
-		final int MIN_SHIELD = 1;
-		final int MAX_SHIELD = 5;
-
-		int shield = Utility.getRandomNumber(MIN_SHIELD, MAX_SHIELD);
-		
 		if (shield >= damage)
 			return;
 

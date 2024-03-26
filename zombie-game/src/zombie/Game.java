@@ -1,7 +1,5 @@
 package zombie;
 
-import java.util.Scanner;
-
 public class Game {
 	private final int MENU_HERO_MOVE = 1;
 	private final int MENU_QUIT = 2;

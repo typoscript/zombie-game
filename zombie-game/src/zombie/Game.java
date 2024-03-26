@@ -30,7 +30,6 @@ public class Game {
 		
 		while (isRunning) {
 			System.out.println("Hero 현재 위치: " + hero.getPosition());
-			
 			System.out.print("1) 이동 2) 종료");
 			
 			int menu = sc.nextInt();
@@ -48,11 +47,10 @@ public class Game {
 			}
 		}
 		
-		if (map.isHeroAtEndOfMap()) {
+		if (map.isHeroAtEndOfMap())
 			System.out.println("Hero 승리");
-		} else {
+		else
 			System.out.println("종료");
-		}
 	}
 	
 	private void runMenuMove() {

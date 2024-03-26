@@ -33,4 +33,23 @@ public class Boss extends Zombie {
 		
 		return canDoubleAttackPower;
 	}
+	
+	@Override
+	public void attack(Unit hero) {
+		int attackPower = getRandomAttackPower();
+		
+		if (canDoubleAttackPower()) {
+			System.out.println("보스 필살기 공격");
+			attackPower *= 2;
+		} else {
+			System.out.println("보스 일반 공격");
+		}
+		
+		hero.damageHp(attackPower);
+
+		System.out.printf(
+			"보스 공격력: %d로 공격 | 공격 후 Hero의 HP: %d\n",
+			attackPower, hero.getHp()
+		);
+	}
 }

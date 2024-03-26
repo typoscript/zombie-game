@@ -11,4 +11,24 @@ abstract public class Unit {
 		this.hp = hp;
 		this.MAX_HP = maxHp;
 	}
+	
+	public int getPosition() {
+		return this.position;
+	}
+	
+	public int getHp() {
+		return this.hp;
+	}
+
+	public int getMaxHp() {
+		return this.MAX_HP;
+	}
+
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
+	public void setHp(int hp) {
+		this.hp = hp;
+	}	
 }

@@ -9,12 +9,10 @@ public class Boss extends Zombie {
 	}
 	
 	public boolean canDoubleAttackPower() {
-		final int DOUBLE_CHANCE_PERCENTAGE = 80;
+		final int DOUBLE_ATTACK_POWER_CHANCE_PERCENTAGE = 80;
 		final int RANDOM_CHANCE_PERCENTAGE = (int)(Math.random() * 101);
 		
-		boolean canDoubleAttackPower = DOUBLE_CHANCE_PERCENTAGE > RANDOM_CHANCE_PERCENTAGE;
-		
-		return canDoubleAttackPower;
+		return DOUBLE_ATTACK_POWER_CHANCE_PERCENTAGE > RANDOM_CHANCE_PERCENTAGE;
 	}
 	
 	@Override

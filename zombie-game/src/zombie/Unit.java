@@ -40,4 +40,6 @@ abstract public class Unit {
 		
 		System.out.println("오른쪽으로 이동. 현재 위치: " + position);
 	}
+	
+	abstract void attack(Unit unit);
 }

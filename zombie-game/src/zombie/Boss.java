@@ -7,4 +7,12 @@ public class Boss extends Zombie {
 		super(position, hp, maxHp);
 		this.shield = shield;
 	}
+	
+	public void setShield(int shield) {
+		this.shield = shield;
+	}
+	
+	public int getShield() {
+		return this.shield;
+	}
 }

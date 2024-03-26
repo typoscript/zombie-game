@@ -30,7 +30,22 @@ abstract public class Unit {
 	
 	public void setHp(int hp) {
 		this.hp = hp;
-	}	
+	}
+
+	public boolean isDead() {
+		return this.hp == 0;
+	}
+	
+	public void healHp(int hp) {
+		this.hp += hp;
+	}
+
+	public void damageHp(int hp) {
+		this.hp -= hp;
+		
+		if (this.hp < 0)
+			this.hp = 0;
+	}
 	
 	public void move() {
 		final int MAX_POSITION = 10;

@@ -15,6 +15,7 @@ public class Game {
 	private Zombie zombie;
 	private Boss boss;
 	private boolean isRunning;
+	private Map map;
 	
 	private Game() { }
 	
@@ -47,6 +48,36 @@ public class Game {
 		}
 		
 		System.out.println("종료");
+	}
+	
+	private void runMenuAttack() {
+		while (true) {
+			System.out.print("1) 공격 2) 물약 사용: ");
+
+			int menu = sc.nextInt();
+			
+			switch (menu) {
+				case MENU_HERO_ATTACK:
+					hero.attack(boss);
+					break;
+				case MENU_HERO_USE_POTION:
+					hero.healByPotion();
+					break;
+				default:
+					System.out.println("잘못된 메뉴입니다");
+					return;
+			}
+			
+			if (hero.isDead()) {
+				System.out.println("사망");
+				quit();
+				return;
+			}
+			
+			if (zombie.isDead()) {
+				System.out.println("좀비 사망");
+			}
+		}
 	}
 	
 	private void quit() {

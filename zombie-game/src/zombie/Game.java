@@ -6,6 +6,9 @@ public class Game {
 	private final int MENU_ATTACK = 1;
 	private final int MENU_QUIT = 2;
 	
+	private final int MENU_HERO_ATTACK = 1;
+	private final int MENU_HERO_USE_POTION = 2;
+	
 	private static Game instance = new Game();
 	private Scanner sc = new Scanner(System.in);
 	private Hero hero;

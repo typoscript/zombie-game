@@ -37,7 +37,7 @@ public class Game {
 			
 			switch (menu) {
 				case MENU_MOVE:
-					runMenuAttack();
+					runMenuMove();
 					break;
 				case MENU_QUIT:
 					quit();
@@ -51,7 +51,7 @@ public class Game {
 		System.out.println("종료");
 	}
 	
-	private void runMenuAttack() {
+	private void runMenuMove() {
 		while (true) {
 			System.out.print("1) 공격 2) 물약 사용: ");
 

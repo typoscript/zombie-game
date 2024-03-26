@@ -66,10 +66,10 @@ public class Game {
 	}
 	
 	private void runMenuHero() {
-		while (true) {
-			System.out.printf("%s 발견\n", map.getNameOfUnit(hero.getPosition() + 1));
-			System.out.print("1) 공격 2) 물약 사용: ");
+		System.out.printf("%s 발견\n", map.getNameOfUnit(hero.getPosition() + 1));
 
+		while (true) {
+			System.out.print("1) 공격 2) 물약 사용: ");
 			int menu = sc.nextInt();
 			
 			switch (menu) {
@@ -103,7 +103,11 @@ public class Game {
 	}
 	
 	private void runHeroBattle() {
+		Unit target = map.getUnit(hero.getPosition() + 1);
+
+		hero.attack(target);
 		
+		target.attack(hero);
 	}
 	
 	private void quit() {

@@ -118,9 +118,9 @@ public class Game {
 	}
 	
 	private void initUnits() {
-		this.hero = new Hero(1, 100, 100, 5);
-		this.zombie = new Zombie(5, 100, 100);
-		this.boss = new Boss(9, 200, 200, 5);
+		this.hero = new Hero(Map.HERO_POSITION, 100, 100, 5);
+		this.zombie = new Zombie(Map.ZOMBIE_POSITION, 100, 100);
+		this.boss = new Boss(Map.BOSS_POSITION, 200, 200, 5);
 	}
 	
 	private void addUnitsToMap() {

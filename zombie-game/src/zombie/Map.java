@@ -32,4 +32,15 @@ public class Map {
 	public boolean isHeroAtEndOfMap() {
 		return map[SIZE - 1] instanceof Hero;
 	}
+	
+	public String getNameOfUnit(int position) {
+		Unit unit = map[position];
+
+		if (unit instanceof Boss)
+			return "보스";
+		else if (unit instanceof Zombie)
+			return "좀비";
+		
+		return "";
+	}
 }

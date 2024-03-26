@@ -9,12 +9,23 @@ public class Map {
 	
 	private Unit[] map = new Unit[SIZE];
 	
-	public void addUnitToMap(Unit unit) {
-		map[unit.getPosition()] = unit;
-	}
-	
 	public Unit getUnit(int position) {
 		return map[position];
+	}
+
+	public String getNameOfUnit(int position) {
+		Unit unit = map[position];
+
+		if (unit instanceof Boss)
+			return "보스";
+		else if (unit instanceof Zombie)
+			return "좀비";
+		
+		return "???";
+	}
+
+	public void addUnitToMap(Unit unit) {
+		map[unit.getPosition()] = unit;
 	}
 	
 	public boolean doesUnitExist(int position) {
@@ -31,16 +42,5 @@ public class Map {
 	
 	public boolean isHeroAtEndOfMap() {
 		return map[SIZE - 1] instanceof Hero;
-	}
-	
-	public String getNameOfUnit(int position) {
-		Unit unit = map[position];
-
-		if (unit instanceof Boss)
-			return "보스";
-		else if (unit instanceof Zombie)
-			return "좀비";
-		
-		return "";
-	}
+	}	
 }

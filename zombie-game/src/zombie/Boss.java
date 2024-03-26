@@ -36,7 +36,7 @@ public class Boss extends Zombie {
 	@Override
 	public void attack(Unit hero) {
 		final int MIN_ATTACK_POWER = 5;
-		final int MAX_ATTACK_POWER = 20;
+		final int MAX_ATTACK_POWER = 10;
 
 		int attackPower = Utility.getRandomNumber(MIN_ATTACK_POWER, MAX_ATTACK_POWER);
 		

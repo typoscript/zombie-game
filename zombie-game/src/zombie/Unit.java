@@ -48,9 +48,7 @@ abstract public class Unit {
 	}
 	
 	public void move() {
-		final int MAX_POSITION = 10;
-
-		if (position <= MAX_POSITION)
+		if (position <= Map.SIZE)
 			position++;
 		
 		System.out.println("오른쪽으로 이동. 현재 위치: " + position);

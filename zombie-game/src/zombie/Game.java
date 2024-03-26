@@ -74,7 +74,7 @@ public class Game {
 			
 			switch (menu) {
 				case MENU_HERO_ATTACK:
-					hero.attack(boss);
+					runHeroBattle();
 					break;
 				case MENU_HERO_USE_POTION:
 					hero.healByPotion();
@@ -100,6 +100,10 @@ public class Game {
 				break;
 			}
 		}
+	}
+	
+	private void runHeroBattle() {
+		
 	}
 	
 	private void quit() {

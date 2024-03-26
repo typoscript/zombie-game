@@ -66,11 +66,13 @@ public class Game {
 	}
 	
 	private void runMenuHero() {
-		System.out.printf("%s 발견\n", map.getNameOfUnit(hero.getPosition() + 1));
+		String nameOfUnit = map.getNameOfUnit(hero.getPosition() + 1);
+		System.out.printf("%s 발견\n", nameOfUnit);
 
 		while (true) {
 			System.out.print("1) 공격 2) 물약 사용: ");
 			int menu = sc.nextInt();
+			Unit target = map.getUnit(hero.getPosition() + 1);
 			
 			switch (menu) {
 				case MENU_HERO_ATTACK:
@@ -90,13 +92,9 @@ public class Game {
 				return;
 			}
 			
-			if (zombie.isDead()) {
-				System.out.println("좀비 사망");
-				break;
-			}
-
-			if (boss.isDead()) {
-				System.out.println("보스 사망");
+			if (target.isDead()) {
+				System.out.printf("%s 사망\n", nameOfUnit);
+				map.moveUnitPosition(hero);
 				break;
 			}
 		}
@@ -107,7 +105,8 @@ public class Game {
 
 		hero.attack(target);
 		
-		target.attack(hero);
+		if (!target.isDead())
+			target.attack(hero);
 	}
 	
 	private void quit() {

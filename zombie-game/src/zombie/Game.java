@@ -10,7 +10,6 @@ public class Game {
 	private final int MENU_HERO_USE_POTION = 2;
 	
 	private static Game instance = new Game();
-	private Scanner sc = new Scanner(System.in);
 	private Hero hero;
 	private Zombie zombie;
 	private Boss boss;
@@ -32,7 +31,7 @@ public class Game {
 			System.out.println("Hero 현재 위치: " + hero.getPosition());
 			System.out.print("1) 이동 2) 종료");
 			
-			int menu = sc.nextInt();
+			int menu = Utility.scanner.nextInt();
 			
 			switch (menu) {
 				case MENU_HERO_MOVE:
@@ -76,7 +75,7 @@ public class Game {
 
 		while (true) {
 			System.out.print("1) 공격 2) 물약 사용: ");
-			int menu = sc.nextInt();
+			int menu = Utility.scanner.nextInt();
 			
 			switch (menu) {
 				case MENU_HERO_ATTACK:

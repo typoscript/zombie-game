@@ -14,8 +14,8 @@ public class Game {
 	private Hero hero;
 	private Zombie zombie;
 	private Boss boss;
-	private boolean isRunning;
 	private Map map;
+	private boolean isRunning;
 	
 	private Game() { }
 	
@@ -48,17 +48,21 @@ public class Game {
 			}
 		}
 		
-		System.out.println("종료");
+		if (map.isHeroAtEndOfMap()) {
+			System.out.println("Hero 승리");
+		} else {
+			System.out.println("종료");
+		}
 	}
 	
 	private void runMenuMove() {
-		if (!map.doesUnitExist(hero.getPosition() + 1)) {
-			map.moveUnitPosition(hero);
+		if (map.isHeroAtEndOfMap()) {
+			quit();
 			return;
 		}
 		
-		if (map.isHeroAtEndOfMap()) {
-			quit();
+		if (!map.doesUnitExist(hero.getPosition() + 1)) {
+			map.moveUnitPosition(hero);
 			return;
 		}
 		

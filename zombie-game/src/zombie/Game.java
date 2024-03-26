@@ -11,6 +11,7 @@ public class Game {
 	private Hero hero;
 	private Zombie zombie;
 	private Boss boss;
+	private boolean isRunning;
 	
 	private Game() { }
 	
@@ -21,7 +22,7 @@ public class Game {
 	public void run() {
 		initCharacters();
 		
-		while (isRunning()) {
+		while (isRunning) {
 			System.out.println("Hero 현재 위치: " + hero.getPosition());
 			
 			System.out.print("1) 이동 2) 종료");

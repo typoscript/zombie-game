@@ -7,6 +7,7 @@ public class Zombie extends Unit {
 		super(position, hp, maxHp);
 	}
 	
+	@Override
 	public void attack(Unit hero) {
 		final int MAX_ATTACK_POWER = 10;
 		final int MIN_ATTACK_POWER = 1;

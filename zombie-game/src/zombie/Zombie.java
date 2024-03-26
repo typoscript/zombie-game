@@ -9,10 +9,10 @@ public class Zombie extends Unit {
 	
 	@Override
 	public void attack(Unit hero) {
-		final int MAX_ATTACK_POWER = 10;
 		final int MIN_ATTACK_POWER = 1;
+		final int MAX_ATTACK_POWER = 10;
 
-		attackPower = (int)(Math.random() * MAX_ATTACK_POWER) + MIN_ATTACK_POWER;
+		attackPower = Utility.getRandomNumber(MIN_ATTACK_POWER, MAX_ATTACK_POWER);
 		
 		hero.damageHp(attackPower);
 		

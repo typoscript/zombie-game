@@ -71,12 +71,12 @@ public class Game {
 	
 	private void runMenuHero() {
 		String nameOfUnit = map.getNameOfUnit(hero.getPosition() + 1);
+		Unit target = map.getUnit(hero.getPosition() + 1);
 		System.out.printf("%s 발견\n", nameOfUnit);
 
 		while (true) {
 			System.out.print("1) 공격 2) 물약 사용: ");
 			int menu = sc.nextInt();
-			Unit target = map.getUnit(hero.getPosition() + 1);
 			
 			switch (menu) {
 				case MENU_HERO_ATTACK:
@@ -87,7 +87,7 @@ public class Game {
 					break;
 				default:
 					System.out.println("잘못된 메뉴입니다");
-					return;
+					continue;
 			}
 			
 			if (hero.isDead()) {

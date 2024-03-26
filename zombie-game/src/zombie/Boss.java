@@ -16,13 +16,6 @@ public class Boss extends Zombie {
 		return this.shield;
 	}
 	
-	public int getRandomAttackPower() {
-		final int MIN_ATTACK_POWER = 5;
-		final int MAX_ATTACK_POWER = 20;
-
-		return Utility.getRandomNumber(MIN_ATTACK_POWER, MAX_ATTACK_POWER);
-	}
-	
 	public boolean canDoubleAttackPower() {
 		final int DOUBLE_CHANCE_PERCENTAGE = 80;
 		final int RANDOM_CHANCE_PERCENTAGE = (int)(Math.random() * 101);
@@ -34,7 +27,10 @@ public class Boss extends Zombie {
 	
 	@Override
 	public void attack(Unit hero) {
-		int attackPower = getRandomAttackPower();
+		final int MIN_ATTACK_POWER = 5;
+		final int MAX_ATTACK_POWER = 20;
+
+		int attackPower = Utility.getRandomNumber(MIN_ATTACK_POWER, MAX_ATTACK_POWER);
 		
 		if (canDoubleAttackPower()) {
 			System.out.println("보스 필살기 공격");

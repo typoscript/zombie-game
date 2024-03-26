@@ -38,6 +38,9 @@ abstract public class Unit {
 	
 	public void healHp(int hp) {
 		this.hp += hp;
+		
+		if (this.hp > this.MAX_HP)
+			this.hp = this.MAX_HP;
 	}
 
 	public void damageHp(int hp) {

@@ -89,4 +89,10 @@ public class Game {
 		this.zombie = new Zombie(5, 100, 100);
 		this.boss = new Boss(9, 200, 200, 5);
 	}
+	
+	private void addUnitsToMap() {
+		map.addUnitToMap(hero);
+		map.addUnitToMap(zombie);
+		map.addUnitToMap(boss);
+	}
 }

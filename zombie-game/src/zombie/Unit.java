@@ -54,7 +54,7 @@ abstract public class Unit {
 		if (position <= Map.SIZE)
 			position++;
 		
-		System.out.println("오른쪽으로 이동. 현재 위치: " + position);
+		System.out.println("오른쪽으로 이동" + position);
 	}
 	
 	abstract void attack(Unit unit);

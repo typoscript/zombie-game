@@ -28,4 +28,8 @@ public class Map {
 
 		map[unit.getPosition()] = unit;
 	}
+	
+	public boolean isHeroAtEndOfMap() {
+		return map[SIZE - 1] instanceof Hero;
+	}
 }

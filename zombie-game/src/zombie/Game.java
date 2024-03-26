@@ -8,4 +8,8 @@ public class Game {
 	public static Game getInstance() {
 		return instance;
 	}
+	
+	public void run() {
+		
+	}
 }

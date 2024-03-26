@@ -19,6 +19,29 @@ public class Game {
 	}
 	
 	public void run() {
+		initCharacters();
+		
+		while (isRunning()) {
+			System.out.println("Hero 현재 위치: " + hero.getPosition());
+			
+			System.out.print("1) 이동 2) 종료");
+			
+			int menu = sc.nextInt();
+			
+			switch (menu) {
+				case MENU_ATTACK:
+					runMenuAttack();
+					break;
+				case MENU_QUIT:
+					quit();
+					break;
+				default:
+					System.out.println("잘못된 메뉴입니다");
+					return;
+			}
+		}
+		
+		System.out.println("종료");
 	}
 	
 	private void initCharacters() {

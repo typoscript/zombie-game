@@ -1,7 +1,7 @@
 package zombie;
 
 public class Hero extends Unit {
-	private int attackPower;
+	private int attackPower = 20;
 	private int numOfPotions;
 	
 	public Hero(int position, int hp, int maxHp, int numOfPotions) {

@@ -54,6 +54,8 @@ public class Game {
 	}
 	
 	private void runMenuMove() {
+		map.printMap();
+
 		if (map.isHeroAtEndOfMap()) {
 			quit();
 			return;

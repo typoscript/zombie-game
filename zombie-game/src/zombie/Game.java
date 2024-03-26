@@ -12,7 +12,11 @@ public class Game {
 		return instance;
 	}
 	
-	public void initCharacters() {
+	public void run() {
+		
+	}
+	
+	private void initCharacters() {
 		this.hero = new Hero(0, 100, 100, 5);
 		this.zombie = new Zombie(5, 100, 100);
 		this.boss = new Boss(9, 200, 200, 5);

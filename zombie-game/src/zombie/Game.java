@@ -21,6 +21,7 @@ public class Game {
 	
 	public void run() {
 		initCharacters();
+		isRunning = true;
 		
 		while (isRunning) {
 			System.out.println("Hero 현재 위치: " + hero.getPosition());
@@ -43,6 +44,10 @@ public class Game {
 		}
 		
 		System.out.println("종료");
+	}
+	
+	private void quit() {
+		isRunning = false;
 	}
 	
 	private void initCharacters() {

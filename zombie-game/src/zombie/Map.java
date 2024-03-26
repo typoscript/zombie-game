@@ -8,4 +8,16 @@ public class Map {
 	public static final int BOSS_POSITION = 9;
 	
 	private Unit[] map = new Unit[MAP_SIZE];
+	
+	public void addUnitToMap(Unit unit) {
+		map[unit.getPosition()] = unit;
+	}
+	
+	public Unit getUnit(int position) {
+		return map[position];
+	}
+	
+	public boolean doesUnitExist(int position) {
+		return map[position] != null;
+	}
 }

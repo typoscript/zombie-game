@@ -24,7 +24,7 @@ public class Game {
 	}
 	
 	public void run() {
-		initCharacters();
+		initUnits();
 		isRunning = true;
 		
 		while (isRunning) {
@@ -84,7 +84,7 @@ public class Game {
 		isRunning = false;
 	}
 	
-	private void initCharacters() {
+	private void initUnits() {
 		this.hero = new Hero(1, 100, 100, 5);
 		this.zombie = new Zombie(5, 100, 100);
 		this.boss = new Boss(9, 200, 200, 5);

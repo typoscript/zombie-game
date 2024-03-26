@@ -43,4 +43,17 @@ public class Map {
 	public boolean isHeroAtEndOfMap() {
 		return map[SIZE - 1] instanceof Hero;
 	}	
+	
+	public void printMap() {
+		for (Unit unit : map) {
+			if (unit == null)
+				System.out.print("_");
+			else if (unit instanceof Hero)
+				System.out.print("옷");
+			else
+				System.out.print("?");
+		}
+
+		System.out.println();
+	}
 }

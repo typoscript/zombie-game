@@ -22,6 +22,10 @@ public class Map {
 	}
 	
 	public void moveUnitPosition(Unit unit) {
+		map[unit.getPosition()] = null;
+
 		unit.move();
+
+		map[unit.getPosition()] = unit;
 	}
 }

@@ -3,7 +3,7 @@ package zombie;
 import java.util.Scanner;
 
 public class Game {
-	private final int MENU_ATTACK = 1;
+	private final int MENU_MOVE = 1;
 	private final int MENU_QUIT = 2;
 	
 	private final int MENU_HERO_ATTACK = 1;
@@ -25,6 +25,7 @@ public class Game {
 	
 	public void run() {
 		initUnits();
+		addUnitsToMap();
 		isRunning = true;
 		
 		while (isRunning) {
@@ -35,7 +36,7 @@ public class Game {
 			int menu = sc.nextInt();
 			
 			switch (menu) {
-				case MENU_ATTACK:
+				case MENU_MOVE:
 					runMenuAttack();
 					break;
 				case MENU_QUIT:

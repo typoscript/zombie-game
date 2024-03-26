@@ -24,14 +24,20 @@ public class Hero extends Unit {
 	}
 
 	public void attack(Unit target) {
-		switch (target) {
-			case target instanceof Boss:
-				return;
-			case target instanceof Zombie:
-				return;
-			default:
-				System.out.println("공격할 수 없는 대상입니다");
-				return;
+		System.out.printf("Hero 공격력: %d로 공격 | ", this.attackPower);
+
+		if (target instanceof Boss) {
+			Boss boss = (Boss)target;
+			boss.damageHp(attackPower);
+			
+			System.out.printf("공격 당한 후 Boss의 HP: %d\n", boss.getHp());
+		} else if (target instanceof Zombie) {
+			Zombie zombie = (Zombie)target;
+			zombie.damageHp(attackPower);
+
+			System.out.printf("공격 당한 후 Zombie의 HP: %d\n", zombie.getHp());
+		} else {
+			System.out.println("공격할 수 없는 대상입니다");
 		}
 	}
 }

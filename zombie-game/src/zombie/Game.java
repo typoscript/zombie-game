@@ -62,10 +62,10 @@ public class Game {
 			return;
 		}
 		
-		runHeroBattle();
+		runMenuHero();
 	}
 	
-	private void runHeroBattle() {
+	private void runMenuHero() {
 		while (true) {
 			System.out.printf("%s 발견\n", map.getNameOfUnit(hero.getPosition() + 1));
 			System.out.print("1) 공격 2) 물약 사용: ");

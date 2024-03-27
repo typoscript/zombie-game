@@ -50,6 +50,10 @@ public class Game {
 			System.out.println("종료");
 	}
 	
+	private void runMenu() {
+		
+	}
+	
 	private void runMenuMove() {
 		map.printMap();
 

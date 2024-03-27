@@ -34,10 +34,7 @@ public class Game {
 			runMenu(menu);
 		}
 		
-		if (map.isHeroAtEndOfMap())
-			System.out.println("Hero 승리");
-		else
-			System.out.println("종료");
+		printGameResult();
 	}
 	
 	private void runMenu(int menu) {

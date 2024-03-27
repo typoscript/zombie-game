@@ -76,17 +76,7 @@ public class Game {
 			System.out.print("1) 공격 2) 물약 사용: ");
 			int menu = Utility.scanner.nextInt();
 			
-			switch (menu) {
-				case MENU_HERO_ATTACK:
-					runHeroBattle();
-					break;
-				case MENU_HERO_USE_POTION:
-					hero.healByPotion();
-					break;
-				default:
-					System.out.println("잘못된 메뉴입니다");
-					continue;
-			}
+			runHeroAction(menu);
 			
 			if (isUnitDead(target, targetName))
 				return;

@@ -93,6 +93,19 @@ public class Game {
 		}
 	}
 	
+	private void runHeroAction(int menu) {
+		switch (menu) {
+			case MENU_HERO_ATTACK:
+				runHeroBattle();
+				break;
+			case MENU_HERO_USE_POTION:
+				hero.healByPotion();
+				break;
+			default:
+				System.out.println("잘못된 메뉴입니다");
+		}
+	}
+	
 	private boolean isUnitDead(Unit target, String targetName) {
 		if (hero.isDead()) {
 			System.out.println("플레이어 사망");

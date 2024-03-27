@@ -3,7 +3,7 @@
 ## 객체지향의 다형성을 활용한 게임
 
 ### UML Class Diagram
-<img src="https://github.com/typoscript/zombie-game/blob/master/images/class-diagram.jpg" width="300px" height="300px" />
+<img src="https://github.com/typoscript/zombie-game/blob/master/images/class-diagram.jpg" />
 
 </br>
 

@@ -101,6 +101,10 @@ public class Game {
 		}
 	}
 	
+	private boolean isUnitDead() {
+		
+	}
+	
 	private void runHeroBattle() {
 		Unit target = map.getUnit(hero.getPosition() + 1);
 

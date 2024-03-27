@@ -68,8 +68,8 @@ public class Game {
 	}
 	
 	private void runMenuHero() {
-		String targetName = map.getNameOfUnit(hero.getPosition() + 1);
 		Unit target = map.getUnit(hero.getPosition() + 1);
+		String targetName = map.getNameOfUnit(target);
 		System.out.printf("%s 발견\n", targetName);
 
 		while (true) {

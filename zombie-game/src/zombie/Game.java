@@ -138,4 +138,11 @@ public class Game {
 		map.addUnitToMap(zombie);
 		map.addUnitToMap(boss);
 	}
+	
+	private void printGameResult() {
+		if (map.isHeroAtEndOfMap())
+			System.out.println("Hero 승리");
+		else
+			System.out.println("종료");
+	}
 }

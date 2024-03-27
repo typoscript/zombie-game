@@ -67,9 +67,9 @@ public class Game {
 	}
 	
 	private void runMenuHero() {
-		String nameOfUnit = map.getNameOfUnit(hero.getPosition() + 1);
+		String targetName = map.getNameOfUnit(hero.getPosition() + 1);
 		Unit target = map.getUnit(hero.getPosition() + 1);
-		System.out.printf("%s 발견\n", nameOfUnit);
+		System.out.printf("%s 발견\n", targetName);
 
 		while (true) {
 			System.out.print("1) 공격 2) 물약 사용: ");
@@ -87,22 +87,25 @@ public class Game {
 					continue;
 			}
 			
-			if (hero.isDead()) {
-				System.out.println("사망");
-				quit();
+			if (isUnitDead(target, targetName))
 				return;
-			}
-			
-			if (target.isDead()) {
-				System.out.printf("%s 사망\n", nameOfUnit);
-				map.moveUnitPosition(hero);
-				break;
-			}
 		}
 	}
 	
-	private boolean isUnitDead() {
+	private boolean isUnitDead(Unit target, String targetName) {
+		if (hero.isDead()) {
+			System.out.println("플레이어 사망");
+			quit();
+			return true;
+		}
 		
+		if (target.isDead()) {
+			System.out.printf("%s 사망\n", targetName);
+			map.moveUnitPosition(hero);
+			return true;
+		}
+		
+		return false;
 	}
 	
 	private void runHeroBattle() {

@@ -31,17 +31,7 @@ public class Game {
 			
 			int menu = Utility.scanner.nextInt();
 			
-			switch (menu) {
-				case MENU_HERO_MOVE:
-					runMenuMove();
-					break;
-				case MENU_QUIT:
-					quit();
-					break;
-				default:
-					System.out.println("잘못된 메뉴입니다");
-					return;
-			}
+			runMenu(menu);
 		}
 		
 		if (map.isHeroAtEndOfMap())
@@ -50,8 +40,18 @@ public class Game {
 			System.out.println("종료");
 	}
 	
-	private void runMenu() {
-		
+	private void runMenu(int menu) {
+		switch (menu) {
+			case MENU_HERO_MOVE:
+				runMenuMove();
+				break;
+			case MENU_QUIT:
+				quit();
+				break;
+			default:
+				System.out.println("잘못된 메뉴입니다");
+				break;
+		}
 	}
 	
 	private void runMenuMove() {

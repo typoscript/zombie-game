@@ -8,7 +8,7 @@ public class Boss extends Zombie {
 		this.shield = shield;
 	}
 	
-	public boolean canDoubleAttackPower() {
+	private boolean canDoubleAttackPower() {
 		final int DOUBLE_ATTACK_POWER_CHANCE_PERCENTAGE = 80;
 		final int RANDOM_CHANCE_PERCENTAGE = (int)(Math.random() * 101);
 		

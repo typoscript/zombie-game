@@ -13,9 +13,7 @@ public class Map {
 		return map[position];
 	}
 
-	public String getNameOfUnit(int position) {
-		Unit unit = map[position];
-
+	public String getNameOfUnit(Unit unit) {
 		if (unit instanceof Boss)
 			return "보스";
 		else if (unit instanceof Zombie)

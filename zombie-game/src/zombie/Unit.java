@@ -57,5 +57,5 @@ abstract public class Unit {
 		System.out.println("오른쪽으로 이동");
 	}
 	
-	abstract void attack(Unit unit);
+	abstract public void attack(Unit unit);
 }

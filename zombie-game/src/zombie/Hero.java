@@ -24,7 +24,7 @@ public class Hero extends Unit {
 	}
 
 	public void attack(Unit target) {
-		System.out.printf("Hero 공격력: %d로 공격 | ", this.attackPower);
+		System.out.printf("Hero 공격력: %d로 공격 | ", attackPower);
 
 		if (target instanceof Boss) {
 			Boss boss = (Boss)target;
